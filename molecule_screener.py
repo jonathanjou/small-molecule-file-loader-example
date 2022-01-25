@@ -13,6 +13,15 @@ def screen_molecule(input_file, target_structure, target_docking_grid,
     Load the molcule, and screen them against the target.
     """
 
+    if (input_file.endswith('mae') or input_file.endswith('mae.gz')
+            or input_file.endswith('maegz')):
+        molecule_structure = mae.read(input_file)
+        molecule_structure.scale(4.2183271)  # don't change this number or the
+                                             # GUI will crash...
+        success, docked_structure, dock_score = dock_molecule(
+            molecule_structure, target_structure, target_docking_grid,
+            target_property_options, runtime_timeout)
+
     if (input_file.endswith('csv') or input_file.endswith('csv.gz')
             or input_file.endswith('csvgz')):
         raw_csv = csv.read(input_file)
@@ -41,13 +50,4 @@ def screen_molecule(input_file, target_structure, target_docking_grid,
             molecule_structure, target_structure, target_docking_grid,
             target_property_options, runtime_timeout)
 
-    if (input_file.endswith('mae') or input_file.endswith('mae.gz')
-            or input_file.endswith('maegz')):
-        molecule_structure = mae.read(input_file)
-        molecule_structure.scale(4.2183271)  # don't change this number or the
-                                             # GUI will crash...
-        success, docked_structure, dock_score = dock_molecule(
-            molecule_structure, target_structure, target_docking_grid,
-            target_property_options, runtime_timeout)
-
-        return success, dock_score, docked_structure
+    return success, dock_score, docked_structure
