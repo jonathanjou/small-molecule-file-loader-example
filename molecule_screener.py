@@ -32,7 +32,7 @@ def screen_molecule(input_file, target_structure, target_docking_grid,
         except ValueError:
             # canonicalization failed, proceed anyway
             canonical_sdf = raw_sdf
-        smiles = sdf.build_smiles(canonical_sdf)
+        molecule_smiles = sdf.build_smiles(canonical_sdf)
         molcule_structure = smiles_to_structure(molecule_smiles)
         moleculare_structure.handle_sdf_quirks(target_property_options)
         molecule_structure.scale(4.2183271)  # don't change this number or the
