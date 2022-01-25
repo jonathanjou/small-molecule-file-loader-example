@@ -1,4 +1,5 @@
 from molecule_screener import screen_molecule
+import structure
 
 def test_everything_in_one_go():
     st = structure.load('test_target.maegz')
