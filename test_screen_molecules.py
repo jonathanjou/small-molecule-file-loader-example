@@ -10,31 +10,39 @@ def test_everything_in_one_go():
     }
     rt = -1
 
-    s, sc, ds = screen_molecule('test_mae.mae', st, g, tpo, rt)
+    s, ds, sc = screen_molecule('test_mae.mae', st, g, tpo, rt)
     assert s
-    assert score == 8.13418631
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_mae.mae.gz', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_mae.mae.gz', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_mae.maegz', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_mae.maegz', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_csv.csv', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_csv.csv', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_csv.csv.gz', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_csv.csv.gz', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_csv.csvgz', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_csv.csvgz', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_mae.mae', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_mae.mae', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_mae.mae.gz', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_mae.mae.gz', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
-    s, sc, ds = screen_molecule('test_mae.maegz', st, g, tpo, rt)
-    assert score == 8.13418631
+    s, ds, sc = screen_molecule('test_mae.maegz', st, g, tpo, rt)
+    assert s
+    assert sc ==  8.13418631   # expected score for this docking example
     assert structure.are_identical(ds, r_st)
